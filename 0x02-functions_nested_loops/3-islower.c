@@ -1,21 +1,24 @@
 #include "main.h"
 
 /**
- * _islower - function to checks for lowercase character
- * @c: An input character 
- * Return: 1 if c is lowercase
- * Return: 0 otherwise
+ * _isalpha - Check Main
+ * @c: An input character
+ * Description: function returns 1 if the character is a
+ * letter, lowercase or uppercase.
+ * Return: 1 or 0 in otherwise.
  */
-
-int _islower(int c)
+int _isalpha(int c)
 {
-	char i;
-	int is_lower = 0;
+	char lower, upper;
+	int isletter = 0;
 
-	for (i = 'a'; i <= 'z'; i++)
+	for (lower = 'a'; lower <= 'z'; lower++)
 	{
-		if (i == c)
-			lower = 1;
+		for (upper = 'A'; upper <= 'Z'; upper++)
+		{
+			if (c == lower || c == upper)
+				isletter = 1;
+		}
 	}
-	return (is_lower);
+	return (isletter);
 }
